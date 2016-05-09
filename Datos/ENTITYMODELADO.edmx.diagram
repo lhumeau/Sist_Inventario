@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9bd1bb75074441e9b92d4eb65a869fd7" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="DbinventarioModel.AlmacenamientoSet" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.ColorSet" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.EmpleadoSet" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.Historial_AsignacionesSet" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.MarcaSet" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.ProyectoSet" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbinventarioModel.Tipo_equipoSet" Width="1.5" PointX="6.5" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="DbinventarioModel.FK_EmpleadoHistorial_Asignaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="DbinventarioModel.FK_ProyectoEmpleado" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbinventarioModel.InventarioSet" Width="1.5" PointX="9.75" PointY="10.875" />
+        <AssociationConnector Association="DbinventarioModel.FK_InventarioSet_AlmacenamientoSet" />
+        <AssociationConnector Association="DbinventarioModel.FK_ColorInventario1" />
+        <AssociationConnector Association="DbinventarioModel.FK_MarcaInventario1" />
+        <AssociationConnector Association="DbinventarioModel.FK_Tipo_equipoInventario1" />
+        <EntityTypeShape EntityType="DbinventarioModel.AsignacionSet" Width="1.5" PointX="12" PointY="8.625" />
+        <AssociationConnector Association="DbinventarioModel.FK_AsignacionHistorial_Asignaciones" />
+        <AssociationConnector Association="DbinventarioModel.FK_AsignacionSet_InventarioSet1" />
+        <AssociationConnector Association="DbinventarioModel.FK_EmpleadoInventario" />
+        <AssociationConnector Association="DbinventarioModel.FK_ProyectoInventario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

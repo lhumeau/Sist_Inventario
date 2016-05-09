@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{706161A3-8182-460B-BE2F-0BE2489A0ECA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asignaciones\ActualizarAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignaciones\ActualizarAsignaciones.Designer.cs">
+      <DependentUpon>ActualizarAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignaciones\BorrarAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignaciones\BorrarAsignaciones.Designer.cs">
+      <DependentUpon>BorrarAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignaciones\RegistroAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignaciones\RegistroAsignacion.Designer.cs">
+      <DependentUpon>RegistroAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignaciones\updateAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignaciones\updateAsignaciones.Designer.cs">
+      <DependentUpon>updateAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbinventarioDataSet.cs">
+      <DependentUpon>DbinventarioDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DbinventarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbinventarioDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\ActEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\ActEmpleado.Designer.cs">
+      <DependentUpon>ActEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\BorrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\BorrarEmpleado.Designer.cs">
+      <DependentUpon>BorrarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTraspaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTraspaso.Designer.cs">
+      <DependentUpon>GestionTraspaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\ActualizarColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\ActualizarColor.Designer.cs">
+      <DependentUpon>ActualizarColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\EliminarColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\EliminarColor.Designer.cs">
+      <DependentUpon>EliminarColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroColor.Designer.cs">
+      <DependentUpon>RegistroColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroEmpleado.Designer.cs">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroMarca.Designer.cs">
+      <DependentUpon>RegistroMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroProyecto.Designer.cs">
+      <DependentUpon>RegistroProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroTipo_Equipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroTipo_Equipo.Designer.cs">
+      <DependentUpon>RegistroTipo_Equipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\ActualizarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\ActualizarInventario.Designer.cs">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\BorrarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\BorrarInventario.Designer.cs">
+      <DependentUpon>BorrarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\RegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\RegistroInventario.Designer.cs">
+      <DependentUpon>RegistroInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\ActualizarMArca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\ActualizarMArca.Designer.cs">
+      <DependentUpon>ActualizarMArca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marca\BorrarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marca\BorrarMarca.Designer.cs">
+      <DependentUpon>BorrarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proyecto\ActProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\ActProyecto.Designer.cs">
+      <DependentUpon>ActProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto\DelProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\DelProyecto.Designer.cs">
+      <DependentUpon>DelProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetEmpleado\GenerarReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetEmpleado\GenerarReporte.Designer.cs">
+      <DependentUpon>GenerarReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetEmpleado\MostrarReportePorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetEmpleado\MostrarReportePorEmpleado.Designer.cs">
+      <DependentUpon>MostrarReportePorEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEquipoAsignado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEquipoAsignado.Designer.cs">
+      <DependentUpon>ReporteEquipoAsignado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Equipo\ActTipoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipo_Equipo\ActTipoEquipo.Designer.cs">
+      <DependentUpon>ActTipoEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Equipo\DelTipoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipo_Equipo\DelTipoEquipo.Designer.cs">
+      <DependentUpon>DelTipoEquipo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Asignaciones\ActualizarAsignaciones.resx">
+      <DependentUpon>ActualizarAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignaciones\BorrarAsignaciones.resx">
+      <DependentUpon>BorrarAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignaciones\RegistroAsignacion.resx">
+      <DependentUpon>RegistroAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignaciones\updateAsignaciones.resx">
+      <DependentUpon>updateAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\ActEmpleado.resx">
+      <DependentUpon>ActEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\BorrarEmpleado.resx">
+      <DependentUpon>BorrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionTraspaso.resx">
+      <DependentUpon>GestionTraspaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\ActualizarColor.resx">
+      <DependentUpon>ActualizarColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\EliminarColor.resx">
+      <DependentUpon>EliminarColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroColor.resx">
+      <DependentUpon>RegistroColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroEmpleado.resx">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroMarca.resx">
+      <DependentUpon>RegistroMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroProyecto.resx">
+      <DependentUpon>RegistroProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroTipo_Equipo.resx">
+      <DependentUpon>RegistroTipo_Equipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\RegistroInventario.resx">
+      <DependentUpon>RegistroInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\ActualizarInventario.resx">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\BorrarInventario.resx">
+      <DependentUpon>BorrarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\ActualizarMArca.resx">
+      <DependentUpon>ActualizarMArca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marca\BorrarMarca.resx">
+      <DependentUpon>BorrarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Proyecto\ActProyecto.resx">
+      <DependentUpon>ActProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto\DelProyecto.resx">
+      <DependentUpon>DelProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteDetEmpleado\GenerarReporte.resx">
+      <DependentUpon>GenerarReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteDetEmpleado\MostrarReportePorEmpleado.resx">
+      <DependentUpon>MostrarReportePorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEquipoAsignado.resx">
+      <DependentUpon>ReporteEquipoAsignado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipo_Equipo\ActTipoEquipo.resx">
+      <DependentUpon>ActTipoEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipo_Equipo\DelTipoEquipo.resx">
+      <DependentUpon>DelTipoEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DbinventarioDataSet.xsc">
+      <DependentUpon>DbinventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DbinventarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DbinventarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbinventarioDataSet.xss">
+      <DependentUpon>DbinventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Presentacion.DbinventarioDataSetTableAdapters.DataTable1TableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config222">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{8784aa15-e52e-456a-8beb-adbb4beb9ac1}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{20f959da-fbaa-4791-be61-0a9fd0e4761c}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball_red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

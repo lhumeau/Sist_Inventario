@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbinventarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AlmacenamientoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InventarioSets" Relationship="DbinventarioModel.FK_InventarioSet_AlmacenamientoSet" FromRole="AlmacenamientoSet" ToRole="InventarioSet" />
+  </EntityType>
+  <EntityType Name="ColorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InventarioSets" Relationship="DbinventarioModel.FK_ColorInventario1" FromRole="ColorSet" ToRole="InventarioSet" />
+  </EntityType>
+  <EntityType Name="EmpleadoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cedula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProyectoId" Type="Int32" Nullable="false" />
+    <Property Name="Activo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Historial_AsignacionesSet" Relationship="Self.FK_EmpleadoHistorial_Asignaciones" FromRole="EmpleadoSet" ToRole="Historial_AsignacionesSet" />
+    <NavigationProperty Name="ProyectoSet" Relationship="Self.FK_ProyectoEmpleado" FromRole="EmpleadoSet" ToRole="ProyectoSet" />
+    <NavigationProperty Name="AsignacionSets" Relationship="DbinventarioModel.FK_EmpleadoInventario" FromRole="EmpleadoSet" ToRole="AsignacionSet" />
+  </EntityType>
+  <EntityType Name="Historial_AsignacionesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
+    <Property Name="fecha_asignacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Asignacion_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EmpleadoSet" Relationship="Self.FK_EmpleadoHistorial_Asignaciones" FromRole="Historial_AsignacionesSet" ToRole="EmpleadoSet" />
+    <NavigationProperty Name="AsignacionSet" Relationship="DbinventarioModel.FK_AsignacionHistorial_Asignaciones" FromRole="Historial_AsignacionesSet" ToRole="AsignacionSet" />
+  </EntityType>
+  <EntityType Name="MarcaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InventarioSets" Relationship="DbinventarioModel.FK_MarcaInventario1" FromRole="MarcaSet" ToRole="InventarioSet" />
+  </EntityType>
+  <EntityType Name="ProyectoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EmpleadoSets" Relationship="Self.FK_ProyectoEmpleado" FromRole="ProyectoSet" ToRole="EmpleadoSet" />
+    <NavigationProperty Name="AsignacionSets" Relationship="DbinventarioModel.FK_ProyectoInventario" FromRole="ProyectoSet" ToRole="AsignacionSet" />
+  </EntityType>
+  <EntityType Name="Tipo_equipoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InventarioSets" Relationship="DbinventarioModel.FK_Tipo_equipoInventario1" FromRole="Tipo_equipoSet" ToRole="InventarioSet" />
+  </EntityType>
+  <Association Name="FK_EmpleadoHistorial_Asignaciones">
+    <End Role="EmpleadoSet" Type="Self.EmpleadoSet" Multiplicity="1" />
+    <End Role="Historial_AsignacionesSet" Type="Self.Historial_AsignacionesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpleadoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Historial_AsignacionesSet">
+        <PropertyRef Name="EmpleadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProyectoEmpleado">
+    <End Role="ProyectoSet" Type="Self.ProyectoSet" Multiplicity="1" />
+    <End Role="EmpleadoSet" Type="Self.EmpleadoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProyectoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpleadoSet">
+        <PropertyRef Name="ProyectoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbinventarioEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AlmacenamientoSets" EntityType="Self.AlmacenamientoSet" />
+    <EntitySet Name="ColorSets" EntityType="Self.ColorSet" />
+    <EntitySet Name="EmpleadoSets" EntityType="Self.EmpleadoSet" />
+    <EntitySet Name="Historial_AsignacionesSet" EntityType="Self.Historial_AsignacionesSet" />
+    <EntitySet Name="MarcaSets" EntityType="Self.MarcaSet" />
+    <EntitySet Name="ProyectoSets" EntityType="Self.ProyectoSet" />
+    <EntitySet Name="Tipo_equipoSet" EntityType="Self.Tipo_equipoSet" />
+    <AssociationSet Name="FK_EmpleadoHistorial_Asignaciones" Association="Self.FK_EmpleadoHistorial_Asignaciones">
+      <End Role="EmpleadoSet" EntitySet="EmpleadoSets" />
+      <End Role="Historial_AsignacionesSet" EntitySet="Historial_AsignacionesSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProyectoEmpleado" Association="Self.FK_ProyectoEmpleado">
+      <End Role="ProyectoSet" EntitySet="ProyectoSets" />
+      <End Role="EmpleadoSet" EntitySet="EmpleadoSets" />
+    </AssociationSet>
+    <EntitySet Name="InventarioSets" EntityType="DbinventarioModel.InventarioSet" />
+    <AssociationSet Name="FK_InventarioSet_AlmacenamientoSet" Association="DbinventarioModel.FK_InventarioSet_AlmacenamientoSet">
+      <End Role="AlmacenamientoSet" EntitySet="AlmacenamientoSets" />
+      <End Role="InventarioSet" EntitySet="InventarioSets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ColorInventario1" Association="DbinventarioModel.FK_ColorInventario1">
+      <End Role="ColorSet" EntitySet="ColorSets" />
+      <End Role="InventarioSet" EntitySet="InventarioSets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MarcaInventario1" Association="DbinventarioModel.FK_MarcaInventario1">
+      <End Role="MarcaSet" EntitySet="MarcaSets" />
+      <End Role="InventarioSet" EntitySet="InventarioSets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_equipoInventario1" Association="DbinventarioModel.FK_Tipo_equipoInventario1">
+      <End Role="Tipo_equipoSet" EntitySet="Tipo_equipoSet" />
+      <End Role="InventarioSet" EntitySet="InventarioSets" />
+    </AssociationSet>
+    <EntitySet Name="AsignacionSets" EntityType="DbinventarioModel.AsignacionSet" />
+    <AssociationSet Name="FK_AsignacionHistorial_Asignaciones" Association="DbinventarioModel.FK_AsignacionHistorial_Asignaciones">
+      <End Role="AsignacionSet" EntitySet="AsignacionSets" />
+      <End Role="Historial_AsignacionesSet" EntitySet="Historial_AsignacionesSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AsignacionSet_InventarioSet1" Association="DbinventarioModel.FK_AsignacionSet_InventarioSet1">
+      <End Role="InventarioSet" EntitySet="InventarioSets" />
+      <End Role="AsignacionSet" EntitySet="AsignacionSets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpleadoInventario" Association="DbinventarioModel.FK_EmpleadoInventario">
+      <End Role="EmpleadoSet" EntitySet="EmpleadoSets" />
+      <End Role="AsignacionSet" EntitySet="AsignacionSets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProyectoInventario" Association="DbinventarioModel.FK_ProyectoInventario">
+      <End Role="ProyectoSet" EntitySet="ProyectoSets" />
+      <End Role="AsignacionSet" EntitySet="AsignacionSets" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="InventarioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarcaId" Type="Int32" Nullable="false" />
+    <Property Name="ColorId" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_equipoId" Type="Int32" Nullable="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="NumeroSerie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServicesTag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Procesador" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemoriaRAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sistema_Operativo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Almacenamiento" Type="Int32" />
+    <NavigationProperty Name="AlmacenamientoSet" Relationship="DbinventarioModel.FK_InventarioSet_AlmacenamientoSet" FromRole="InventarioSet" ToRole="AlmacenamientoSet" />
+    <NavigationProperty Name="ColorSet" Relationship="DbinventarioModel.FK_ColorInventario1" FromRole="InventarioSet" ToRole="ColorSet" />
+    <NavigationProperty Name="MarcaSet" Relationship="DbinventarioModel.FK_MarcaInventario1" FromRole="InventarioSet" ToRole="MarcaSet" />
+    <NavigationProperty Name="Tipo_equipoSet" Relationship="DbinventarioModel.FK_Tipo_equipoInventario1" FromRole="InventarioSet" ToRole="Tipo_equipoSet" />
+    <NavigationProperty Name="AsignacionSets" Relationship="DbinventarioModel.FK_AsignacionSet_InventarioSet1" FromRole="InventarioSet" ToRole="AsignacionSet" />
+  </EntityType>
+  <Association Name="FK_InventarioSet_AlmacenamientoSet">
+    <End Type="DbinventarioModel.AlmacenamientoSet" Role="AlmacenamientoSet" Multiplicity="0..1" />
+    <End Type="DbinventarioModel.InventarioSet" Role="InventarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AlmacenamientoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventarioSet">
+        <PropertyRef Name="Almacenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ColorInventario1">
+    <End Type="DbinventarioModel.ColorSet" Role="ColorSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.InventarioSet" Role="InventarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColorSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventarioSet">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MarcaInventario1">
+    <End Type="DbinventarioModel.MarcaSet" Role="MarcaSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.InventarioSet" Role="InventarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventarioSet">
+        <PropertyRef Name="MarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_equipoInventario1">
+    <End Type="DbinventarioModel.Tipo_equipoSet" Role="Tipo_equipoSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.InventarioSet" Role="InventarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_equipoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventarioSet">
+        <PropertyRef Name="Tipo_equipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AsignacionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProyectoId" Type="Int32" Nullable="false" />
+    <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Asignacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Asignacion_Anterior" Type="Int32" />
+    <Property Name="InventarioID" Type="Int32" />
+    <NavigationProperty Name="Historial_AsignacionesSet" Relationship="DbinventarioModel.FK_AsignacionHistorial_Asignaciones" FromRole="AsignacionSet" ToRole="Historial_AsignacionesSet" />
+    <NavigationProperty Name="InventarioSet" Relationship="DbinventarioModel.FK_AsignacionSet_InventarioSet1" FromRole="AsignacionSet" ToRole="InventarioSet" />
+    <NavigationProperty Name="EmpleadoSet" Relationship="DbinventarioModel.FK_EmpleadoInventario" FromRole="AsignacionSet" ToRole="EmpleadoSet" />
+    <NavigationProperty Name="ProyectoSet" Relationship="DbinventarioModel.FK_ProyectoInventario" FromRole="AsignacionSet" ToRole="ProyectoSet" />
+  </EntityType>
+  <Association Name="FK_AsignacionHistorial_Asignaciones">
+    <End Type="DbinventarioModel.AsignacionSet" Role="AsignacionSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.Historial_AsignacionesSet" Role="Historial_AsignacionesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsignacionSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Historial_AsignacionesSet">
+        <PropertyRef Name="Asignacion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AsignacionSet_InventarioSet1">
+    <End Type="DbinventarioModel.InventarioSet" Role="InventarioSet" Multiplicity="0..1" />
+    <End Type="DbinventarioModel.AsignacionSet" Role="AsignacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventarioSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionSet">
+        <PropertyRef Name="InventarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpleadoInventario">
+    <End Type="DbinventarioModel.EmpleadoSet" Role="EmpleadoSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.AsignacionSet" Role="AsignacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpleadoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionSet">
+        <PropertyRef Name="EmpleadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProyectoInventario">
+    <End Type="DbinventarioModel.ProyectoSet" Role="ProyectoSet" Multiplicity="1" />
+    <End Type="DbinventarioModel.AsignacionSet" Role="AsignacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProyectoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionSet">
+        <PropertyRef Name="ProyectoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

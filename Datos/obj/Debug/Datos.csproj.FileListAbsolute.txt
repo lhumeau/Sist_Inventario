@@ -1,0 +1,7 @@
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\bin\Debug\Datos.dll.config
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\bin\Debug\Datos.dll
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\bin\Debug\Datos.pdb
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\bin\Debug\EntityFramework.dll
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\bin\Debug\EntityFramework.xml
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\obj\Debug\Datos.dll
+C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Datos\obj\Debug\Datos.pdb

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbinventarioModelStoreContainer" CdmEntityContainer="DbinventarioEntities">
+    <EntitySetMapping Name="AlmacenamientoSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.AlmacenamientoSet">
+        <MappingFragment StoreEntitySet="AlmacenamientoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColorSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.ColorSet">
+        <MappingFragment StoreEntitySet="ColorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpleadoSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.EmpleadoSet">
+        <MappingFragment StoreEntitySet="EmpleadoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Historial_AsignacionesSet">
+      <EntityTypeMapping TypeName="DbinventarioModel.Historial_AsignacionesSet">
+        <MappingFragment StoreEntitySet="Historial_AsignacionesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="fecha_asignacion" ColumnName="fecha_asignacion" />
+          <ScalarProperty Name="Asignacion_Id" ColumnName="Asignacion_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarcaSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.MarcaSet">
+        <MappingFragment StoreEntitySet="MarcaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProyectoSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.ProyectoSet">
+        <MappingFragment StoreEntitySet="ProyectoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_equipoSet">
+      <EntityTypeMapping TypeName="DbinventarioModel.Tipo_equipoSet">
+        <MappingFragment StoreEntitySet="Tipo_equipoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventarioSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.InventarioSet">
+        <MappingFragment StoreEntitySet="InventarioSet">
+          <ScalarProperty Name="Almacenamiento" ColumnName="Almacenamiento" />
+          <ScalarProperty Name="Sistema_Operativo" ColumnName="Sistema_Operativo" />
+          <ScalarProperty Name="MemoriaRAM" ColumnName="MemoriaRAM" />
+          <ScalarProperty Name="Procesador" ColumnName="Procesador" />
+          <ScalarProperty Name="ServicesTag" ColumnName="ServicesTag" />
+          <ScalarProperty Name="NumeroSerie" ColumnName="NumeroSerie" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Tipo_equipoId" ColumnName="Tipo_equipoId" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsignacionSets">
+      <EntityTypeMapping TypeName="DbinventarioModel.AsignacionSet">
+        <MappingFragment StoreEntitySet="AsignacionSet">
+          <ScalarProperty Name="InventarioID" ColumnName="InventarioID" />
+          <ScalarProperty Name="Asignacion_Anterior" ColumnName="Asignacion_Anterior" />
+          <ScalarProperty Name="Fecha_Asignacion" ColumnName="Fecha_Asignacion" />
+          <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
