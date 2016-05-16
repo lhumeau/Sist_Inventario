@@ -335,7 +335,9 @@
     <EmbeddedResource Include="Tipo_Equipo\DelTipoEquipo.resx">
       <DependentUpon>DelTipoEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="DbinventarioDataSet.xsc">
       <DependentUpon>DbinventarioDataSet.xsd</DependentUpon>
