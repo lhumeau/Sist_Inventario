@@ -7,15 +7,3 @@ C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\
 C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Negocio\obj\Debug\Negocio.dll
 C:\Users\Ing. Luis Humeau\Documents\Visual Studio 2012\Projects\Sist_Inventario\Negocio\obj\Debug\Negocio.pdb
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\Negocio.dll
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\Negocio.pdb
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\Datos.dll
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\EntityFramework.dll
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\Datos.pdb
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\Datos.dll.config
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\bin\Debug\EntityFramework.xml
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\obj\Debug\Negocio.csproj.CopyComplete
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\obj\Debug\Negocio.dll
-C:\Users\Administrator\Documents\GitHub\Sist_Inventario\Negocio\obj\Debug\Negocio.pdb

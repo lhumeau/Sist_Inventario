@@ -81,7 +81,7 @@ namespace Presentacion.Inventario
         private InventarioCN umanager = new InventarioCN();
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-             umanager.MetActualizarEquipo(new InventarioSet()
+            umanager.MetActualizarEquipo(new InventarioSet()
             {
                 Id = Convert.ToInt32(txtboxIDinventario.Text),
                 MarcaId = Convert.ToInt32(comboBoxMarca.SelectedValue),
