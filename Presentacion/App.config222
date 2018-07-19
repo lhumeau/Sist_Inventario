@@ -5,7 +5,7 @@
 
     <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --></configSections>
   <connectionStrings>
-    <add name="DbinventarioEntities" connectionString="metadata=res://*/ENTITYMODELADO.csdl|res://*/ENTITYMODELADO.ssdl|res://*/ENTITYMODELADO.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=WINDOWS-IP965MG\VEEAMSQL2012;initial catalog=Dbinventario;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="DbinventarioEntities" connectionString="metadata=res://*/ENTITYMODELADO.csdl|res://*/ENTITYMODELADO.ssdl|res://*/ENTITYMODELADO.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=XS19225488174;initial catalog=Dbinventario;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
   </connectionStrings>
   <startup>
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
